@@ -12,6 +12,8 @@ Call the Skill tool with "tdd" at the seams the spec or tickets name. Tests firs
 
 Run typechecking regularly, single test files regularly, and the full test suite once at the end. Run the repository's own gates and report their real output.
 
-Once done, call the Skill tool with "code-review" to review the work, then hand back what changed, why it works, how it was checked, and what remains open.
+Commit each finished increment to the current branch with its tests, so that the diff from the fixed point to `HEAD` holds everything a reviewer must see. `code-review` reads committed changes only; an uncommitted change is invisible to it.
 
-Commit your work to the current branch. Open no PR, including a draft, until the user has reviewed the result and approved submission.
+Once the last increment is committed, call the Skill tool with "code-review", giving it the fixed point the work started from. Fix what it confirms as a further commit with its own checks, then hand back what changed, why it works, how it was checked, and what remains open.
+
+Open no PR, including a draft, until the user has reviewed the result and approved submission.
