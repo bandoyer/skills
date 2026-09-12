@@ -1,32 +1,16 @@
 ---
 name: grilling
-description: Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+description: Stress-test a plan or decision through a focused interview when the user requests one or a planning workflow needs unresolved product decisions.
 ---
 
-Interview the user relentlessly until you reach a shared understanding. Map this as a **design tree**: every decision branches into the decisions that hang off it.
+# Focused design interview
 
-Before the first round, settle the **objective**: what this session is for, and what the user needs to have in hand when it ends (a spec, one decision, a build brief, an evaluation of a tool). Ask it as Q0 if the request does not already say. The objective is the root of the tree and the stopping rule for every round after it.
+Establish the session's objective and intended deliverable from the request. Ask only if they are materially unclear. Keep the interview bounded by that outcome; do not try to specify every future branch of a design.
 
-Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
+Ask questions whose answers affect what gets built, decided, or delivered. Group a manageable set of independent questions, give a recommendation and its main tradeoff, then wait for the answers. Questions that depend on an unresolved answer wait until it is available.
 
-Format a round like so:
+Look up accessible facts yourself. Use delegation only when it is selected and authorized; continue independent discussion while a lookup runs. Routine choices with sound defaults become briefly stated assumptions the user can change.
 
-```
-❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
+After each round, update the decisions and remaining uncertainties against the objective. Stop asking when the requested deliverable is actionable and no material decision remains. Respect a user-specified question or round limit and report what is still unresolved.
 
-➡️ <your recommended answer>
-
----
-
-❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
-
-➡️ <your recommended answer>
-```
-
-Each round the user answers reshapes the tree: settled decisions push the frontier outward and unblock questions that depended on them. Recompute the frontier and ask the next round. A question whose answer depends on another question still open in this round belongs to a _later_ round, not this one.
-
-Finding _facts_ is your job, never the user's. When a frontier question needs a fact from the environment (filesystem, tools, etc.), dispatch a sub-agent to find it; don't ask the user for anything you could look up yourself. Don't block on it: a running exploration is an unsettled prerequisite, so only the questions downstream of it wait for the sub-agent to report; ask the rest of the frontier now. The _decisions_ are the user's: put each to them and wait.
-
-Before asking a round, sort the frontier by the objective. A question goes to the user when its answer changes what gets built, decided, or delivered. A question with a sound default that the deliverable can carry as a stated assumption is **defaulted**: record the default and its reason in one line under the round, and do not ask it. Nothing is silently assumed; a default is written down, not skipped, and the user can overturn any of them.
-
-The session is done when the frontier holds no question the user needs to answer: every branch of the design tree is either decided by the user or carried as a written default. When a round would consist only of defaults, do not send it as questions; present the defaults with the shared understanding instead. Do not act on it until the user confirms you have reached a shared understanding.
+For an interview-only request, deliver the shared understanding without starting implementation. If the user already authorized implementation after planning, continue once the material decisions are settled, preserving any expressly reserved checkpoint. This skill does not create an extra confirmation stage.

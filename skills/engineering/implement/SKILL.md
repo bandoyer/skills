@@ -1,19 +1,19 @@
 ---
 name: implement
-description: "Implement a piece of work based on a spec or set of tickets."
+description: Implement the work described by a request, specification, or ticket.
 disable-model-invocation: true
 ---
 
-Implement the work described by the user in the spec or tickets.
+# Implement
 
-Call the Skill tool with "clean-code" first. Its working rules and workflow govern the implementation: state the problem, propose the change with its tests and documentation impact before editing production code, and get authorization for that stage once. A spec or ticket the user has already approved is that authorization; do not ask again for it.
+Complete the requested work within its accepted scope, using the project instructions and the user's coding standard. A direct implementation request or an approved specification authorizes the local work; preserve any expressly reserved checkpoints. Do not require a preceding interview, ticket breakdown, or another approval of routine implementation choices.
 
-Call the Skill tool with "tdd" at the seams the spec or tickets name. Tests first per increment, with each red run recorded before its code is written.
+Before editing, identify the requested outcome, relevant existing code, starting Git reference, pre-existing work, and required checks. Explain the approach briefly and continue. Load `clean-code` when available and `tdd` for changed behaviour; use a skill tool when available or read the named skill directly.
 
-Run typechecking regularly, single test files regularly, and the full test suite once at the end. Run the repository's own gates and report their real output.
+Implement reviewable increments. Reuse existing tests for pure refactors. Finish relevant checks and fix failures caused by the change within the authorized scope. Do not broaden work to unrelated failures or optional cleanup.
 
-Commit each finished increment to the current branch with its tests, so that the diff from the fixed point to `HEAD` holds everything a reviewer must see. `code-review` reads committed changes only; an uncommitted change is invisible to it.
+Follow the project's commit policy. If local commits are authorized, commit only task-owned changes and record the candidate and starting reference before using the committed-diff `code-review` skill. If work remains uncommitted, review that actual diff directly instead. Do not commit unrelated user changes to make a review command convenient.
 
-Once the last increment is committed, call the Skill tool with "code-review", giving it the fixed point the work started from. Fix what it confirms as a further commit with its own checks, then hand back what changed, why it works, how it was checked, and what remains open.
+Review once using the task's declared allowance. Repair confirmed in-scope blockers when authorized, then check only closure and repair regressions. Do not invoke review recursively or keep polishing until no advice remains. Report the result, meaningful evidence, and unresolved limitations.
 
-Open no PR, including a draft, until the user has reviewed the result and approved submission.
+Follow the user's publication boundaries. A finished local result does not itself authorize a PR, push, merge, or deployment.

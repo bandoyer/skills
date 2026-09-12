@@ -12,9 +12,7 @@ The issue tracker and triage label vocabulary should have been provided to you. 
 
 1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the spec, and respect any ADRs in the area you're touching.
 
-2. Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can. The fewer seams across the codebase, the better - the ideal number is one.
-
-Check with the user that these seams match their expectations.
+2. Describe how acceptance can be demonstrated through suitable existing interfaces. Record decisions already made and leave routine test placement to implementation. Identify a new architectural boundary or unresolved product behaviour explicitly; do not require a separate approval of existing test interfaces.
 
 3. Write the spec using the template below, then publish it to the project issue tracker. Apply the `ready-for-agent` triage label - no need for additional triage.
 
@@ -30,7 +28,7 @@ The solution to the problem, from the user's perspective.
 
 ## User Stories
 
-A LONG, numbered list of user stories. Each user story should be in the format of:
+A concise list of user stories needed to express the accepted scope. Each may use this format:
 
 1. As an <actor>, I want a <feature>, so that <benefit>
 
@@ -38,7 +36,7 @@ A LONG, numbered list of user stories. Each user story should be in the format o
 1. As a mobile bank customer, I want to see balance on my accounts, so that I can make better informed decisions about my spending
 </user-story-example>
 
-This list of user stories should be extremely extensive and cover all aspects of the feature.
+Cover the accepted outcomes and important failure behaviour. Do not add stories for speculative future features or repeat the same requirement in several sections.
 
 ## Implementation Decisions
 
@@ -60,7 +58,7 @@ Exception: if a prototype produced a snippet that encodes a decision more precis
 
 A list of testing decisions that were made. Include:
 
-- A description of what makes a good test (only test external behavior, not implementation details)
+- The observable outcomes and failure cases that establish acceptance
 - Which modules will be tested
 - Prior art for the tests (i.e. similar types of tests in the codebase)
 
