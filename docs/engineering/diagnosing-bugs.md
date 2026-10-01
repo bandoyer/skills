@@ -23,6 +23,7 @@ Those actions keep their authorization requirements. A diagnosis-only request st
 ## It's working if
 
 - Each experiment answers a concrete unresolved question.
+- After two failed fixes that share an assumption, the assumption is named and tested before a third fix.
 - Repetition and performance measurements have explicit bounds.
 - The original symptom is checked after an authorized fix.
 - Temporary instrumentation is cleaned up and useful evidence is retained.

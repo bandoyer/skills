@@ -11,7 +11,7 @@ Start with the reported trigger, expected and actual behaviour, logs, and releva
 
 Prefer a small repeatable check that exercises the actual symptom: an existing test, a CLI or HTTP request, a captured trace, or a targeted harness. Improve its speed or determinism only as far as needed to answer the question. Reuse a useful reproduction rather than requiring exhaustive minimization.
 
-When the cause is unclear, state the plausible explanation and the observation that would distinguish it from alternatives. Use as many hypotheses as the evidence warrants, without a fixed count. Run the smallest bounded experiment that can settle the uncertainty. A repeated failure without new evidence is a reason to change the experiment or report the limit, not repeat the same work.
+When the cause is unclear, state the plausible explanation and the observation that would distinguish it from alternatives. Use as many hypotheses as the evidence warrants, without a fixed count. Run the smallest bounded experiment that can settle the uncertainty. A repeated failure without new evidence is a reason to change the experiment or report the limit, not repeat the same work. When two fixes that share an assumption have failed the same check, write that assumption down and test it directly before attempting another fix.
 
 For intermittent failures, bound repetition or stress by time and resources. For performance, measure a baseline and compare under equivalent conditions. Production instrumentation, new paid calls, and live-system mutations retain their authorization requirements.
 

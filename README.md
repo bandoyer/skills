@@ -209,7 +209,7 @@ Skills I use daily for code work.
 - **[tdd](./skills/engineering/tdd/SKILL.md)**: Build changed behaviour test-first at suitable existing interfaces, without a routine approval stage.
 - **[domain-modeling](./skills/engineering/domain-modeling/SKILL.md)**: Actively build and sharpen a project's domain model: challenge terms against the glossary, stress-test with edge-case scenarios, and update `CONTEXT.md` and ADRs inline.
 - **[codebase-design](./skills/engineering/codebase-design/SKILL.md)**: Shared discipline and vocabulary for designing deep modules: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface.
-- **[code-review](./skills/engineering/code-review/SKILL.md)**: Review committed changes against the requested behaviour and project standards; use a panel only when selected.
+- **[code-review](./skills/engineering/code-review/SKILL.md)**: Review committed changes, or judge another reviewer's findings on them, against the requested behaviour and project standards; use a panel only when selected.
 - **[resolving-merge-conflicts](./skills/engineering/resolving-merge-conflicts/SKILL.md)**: Work through an in-progress git merge or rebase conflict hunk by hunk, resolving by intent traced to each side's primary source, then finish the operation (never `--abort`).
 - **[wizard](./skills/engineering/wizard/SKILL.md)**: Generate an interactive bash wizard that walks a human through steps only they can perform: provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover.
 

@@ -11,7 +11,7 @@ Recommend the entry point that fits the requested outcome. Ordinary fixes and cl
 | Need | Entry point |
 | --- | --- |
 | Implement a clear request, spec, or ticket | `/implement`; use `/tdd` for changed behaviour |
-| Review committed changes | `/code-review`; direct review by default, a panel only when selected |
+| Review committed changes, or judge findings another reviewer produced | `/code-review`; direct review by default, a panel only when selected |
 | Review staged or working-tree changes | A direct review of that explicit diff |
 | Diagnose a bug still unclear after initial inspection | `/diagnosing-bugs` |
 | Stress-test a plan through an interview | `/grill-me`; choose `/grill-with-docs` if the user wants domain documents maintained too |
