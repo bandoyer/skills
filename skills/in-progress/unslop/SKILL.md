@@ -1,7 +1,6 @@
 ---
 name: unslop
-description: Cut AI tells from any writing. Must always apply.
-disable-model-invocation: true
+description: Remove AI writing patterns from a draft a person will read, such as docs, PR descriptions, commit messages, and handoffs. Use when the user asks to unslop or clean up writing, or when another skill routes a draft through unslop.
 ---
 
 # Unslop
